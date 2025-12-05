@@ -56,7 +56,11 @@ export default function Home() {
             </form>
 
             {loading && <p className="text-white">Loading...</p>}
-
+{!loading && movies?.length === 0 && (
+    <p className="text-center text-gray-300 text-xl mt-10">
+        No results found
+    </p>
+)}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {movies?.map((movie) => (
                     <MovieCard
